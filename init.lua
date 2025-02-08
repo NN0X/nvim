@@ -98,6 +98,11 @@ vim.g.have_nerd_font = false
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Tab settings
+vim.opt['tabstop'] = 8
+vim.opt['shiftwidth'] = 8
+vim.opt['expandtab'] = true
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -216,7 +221,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -230,7 +234,8 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- CUSTOM PLUGINS --
   { 'nvim-tree/nvim-tree.lua', opts = {} }, -- File tree
   { 'github/copilot.vim' }, -- Github Copilot
@@ -931,3 +936,4 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
